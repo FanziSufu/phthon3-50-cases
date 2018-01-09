@@ -1,0 +1,68 @@
+2-1
+    filter(function, iterable)
+    内置函数，用于过滤的序列，过滤掉不符合的元素，返回符合条件元素组成的新列表。
+    接收两个参数，第一个为函数，第二个为序列，序列的每个元素作为参数传递给函数进行判断，返回Ture或False，将返回Ture的元素放到新列表中，
+    并返回该新列表
+    function--判断函数
+    iterable--可迭代对象
+
+2-2
+    collections.namedtuple(typename, field_names, vervose=False, rename=False)
+    nametuple类 位于collections模块，用来创建类似于元组的数据类型(元组的子类），除了能够用索引访问数据，能够迭代，还能够方便地通过属性名来访问数据。
+    使我们的代付更加直观，方便维护。
+    typename--新命名的元组名称
+    field_name--元组中元素的名称，有多种表达方式
+    verbise--按默认即可
+    rename--如果元素名称中含有python的关键字，则必须设置为rename=Ture
+
+2-3
+    collections.Counter([iterable-or-mapping])
+    Counter类 位于collections模块，用于跟踪可迭代对象中各个值出现的次数，返回一个类似与字典的数据类型（字典的子类），以元素为key,以其计数为
+    value.
+    iterable--可迭代对象
+    mapping--键-值对应的序列
+
+    Counter.most_common([n])
+    返回一个TopN列表。
+
+2-4
+    sorted(iterable[, cmp[, key[, reverse=False]]])
+    内置函数，对所有可迭代的对象进行排序操作。
+    iterable--可迭代对象
+    cmp--用于比较的函数，有两个参数，都是从可迭代对象中取出。此函数必须遵守的规则为，大于则返回1，小于则返回-1，等于返回0
+    key--用于指定可迭代对象中用于比较的元素，即告诉sorted，按此元素进行排序
+    reverse--排序规则，reverse=Ture 降序，reverse=False升序（默认）
+
+2-5
+    map(function, iterable, ...)
+    内置函数，根据提供的函数，对指定序列做映射。
+    第一个参数functiong以参数序列中的每一个元素调用function函数，返回包含每次function函数返回值的新列表。
+    function--函数
+    iterable--一个或多个序列，由function所需的参数个数决定
+
+    reduce(function, sequence[, initial])
+    位于functools模块，作用是对参数序列中的元素进行累积，并返回最终的结果
+    function--函数，必须保证要求传入2个参数
+    sequence--可迭代对象（有序的）
+    initial--如果提供initial，则作为function的第一个参数；如果没有提供，function第一次获取sequence的前两个元素
+
+2-6
+    collections.OrderedDict([items])
+    位于collections模块，用于创建有序的字典（按输入的顺序依次排列），是字典的子类，一般不传入参数
+
+2-7
+    collections.deque([iterable[, maxlen])
+    位于collections模块，用于创建两端都可以操作的序列，如用作存储历史记录的列表
+    iterable--可迭代对象
+    maxlen--规定序列中最大元素数
+
+    pickle.dump(obj, file[, protocol])
+    位于pickle模块中，作用是序列化对象,并将结果数据流写入到文件对象中。
+    obj--待序列化的对象
+    file--文件名
+    protocol--序列化模式，一般是'wb',二进制覆盖（或创建）
+
+    pickle.load(file[, protocol])
+    位于pickle模块中，pickle.dump的逆操作，把文件内容反序列化到程序中。
+    file--文件名
+    protocol--序列化模式，一般是'rb‘，二进制只读
